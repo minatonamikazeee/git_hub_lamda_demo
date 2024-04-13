@@ -16,7 +16,7 @@ phases:
   post_build:
     commands:
       - echo "Uploading to S3..."
-      - aws s3 cp deployment_package.zip s3://buildzip/
+      - aws s3 cp deployment_package.zip s3://buildzip1/
       - echo "Updating Lambda function via S3..."
-      - aws lambda update-function-code --function-name cicd_demo_git_latest --s3-bucket lambda-builds-zip --s3-key deployment_package.zip
-      - echo "Deployment complete!"
+      - aws lambda update-function-code --function-name cicd-pipeline --s3-bucket buildzip1 --s3-key deployment_package.zip
+      - echo "Deplgit toyment complete!"
