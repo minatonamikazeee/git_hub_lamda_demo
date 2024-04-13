@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 import pandas
 
-def lamda_handler(event,context):
+def lambda_handler(event,context):
     print("Event-data->",event)
     response=requests.get("https://www.google.com")
     print(response.text)
